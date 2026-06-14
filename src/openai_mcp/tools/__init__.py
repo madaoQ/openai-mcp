@@ -13,11 +13,11 @@ Modules:
 
 from __future__ import annotations
 
-from openai.tools.chat import chat_tools
-from openai.tools.embed import embed_tools
-from openai.tools.files import file_tools
-from openai.tools.models import model_tools
-from openai.tools.moderate import moderate_tools
+from openai_mcp.tools.chat import chat_tools
+from openai_mcp.tools.embed import embed_tools
+from openai_mcp.tools.files import file_tools
+from openai_mcp.tools.models import model_tools
+from openai_mcp.tools.moderate import moderate_tools
 
 openai_tools = [
     *chat_tools,

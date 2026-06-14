@@ -8,8 +8,8 @@ from __future__ import annotations
 from dedalus_mcp import HttpMethod, tool
 from dedalus_mcp.types import ToolAnnotations
 
-from openai.request import request
-from openai.types import JSONObject
+from openai_mcp.request import request
+from openai_mcp.types import JSONObject
 
 
 @tool(

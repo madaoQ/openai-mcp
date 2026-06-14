@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 from dedalus_mcp import MCPServer
 from dedalus_mcp.server import TransportSecuritySettings
 
-from openai import create_openai_connection, openai_tools
+from openai_mcp import create_openai_connection, openai_tools
 
 load_dotenv()
 

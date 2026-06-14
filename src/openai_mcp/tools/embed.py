@@ -8,9 +8,9 @@ from __future__ import annotations
 from dedalus_mcp import HttpMethod, tool
 from dedalus_mcp.types import ToolAnnotations
 
-from openai.guards import validate_encoding_format, validate_message_content, validate_model
-from openai.request import request
-from openai.types import JSONObject
+from openai_mcp.guards import validate_encoding_format, validate_message_content, validate_model
+from openai_mcp.request import request
+from openai_mcp.types import JSONObject
 
 
 @tool(

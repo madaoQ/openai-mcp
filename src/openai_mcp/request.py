@@ -9,7 +9,7 @@ from typing import Any
 
 from dedalus_mcp import HttpMethod, HttpRequest, get_context
 
-from openai.types import JSONObject
+from openai_mcp.types import JSONObject
 
 
 def _build_url(path: str, **params: Any) -> str:
