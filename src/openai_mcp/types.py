@@ -7,11 +7,13 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
-class ModelInfo(BaseModel, frozen=True, slots=True):
+class ModelInfo(BaseModel):
     """OpenAI model info."""
+    model_config = _FROZEN_SLOT
+
 
     id: str
     object: str | None = None
@@ -19,23 +21,29 @@ class ModelInfo(BaseModel, frozen=True, slots=True):
     owned_by: str | None = None
 
 
-class ModelList(BaseModel, frozen=True, slots=True):
+class ModelList(BaseModel):
     """List of models."""
+    model_config = _FROZEN_SLOT
+
 
     object: str | None = None
     data: list[ModelInfo] = Field(default_factory=list)
 
 
-class EmbeddingItem(BaseModel, frozen=True, slots=True):
+class EmbeddingItem(BaseModel):
     """Single embedding result."""
+    model_config = _FROZEN_SLOT
+
 
     embedding: list[float]
     index: int | None = None
     object: str | None = None
 
 
-class EmbeddingResponse(BaseModel, frozen=True, slots=True):
+class EmbeddingResponse(BaseModel):
     """Embedding API response."""
+    model_config = _FROZEN_SLOT
+
 
     object: str | None = None
     model: str | None = None
@@ -43,23 +51,29 @@ class EmbeddingResponse(BaseModel, frozen=True, slots=True):
     usage: dict[str, Any] = Field(default_factory=dict)
 
 
-class ModerationCategory(BaseModel, frozen=True, slots=True):
+class ModerationCategory(BaseModel):
     """Single moderation category."""
+    model_config = _FROZEN_SLOT
+
 
     flagged: bool | None = None
     scores: dict[str, float] = Field(default_factory=dict)
 
 
-class ModerationResponse(BaseModel, frozen=True, slots=True):
+class ModerationResponse(BaseModel):
     """Moderation API response."""
+    model_config = _FROZEN_SLOT
+
 
     id: str | None = None
     flagged: bool | None = None
     categories: dict[str, bool] = Field(default_factory=dict)
 
 
-class FileInfo(BaseModel, frozen=True, slots=True):
+class FileInfo(BaseModel):
     """File info."""
+    model_config = _FROZEN_SLOT
+
 
     id: str | None = None
     object: str | None = None
@@ -69,8 +83,10 @@ class FileInfo(BaseModel, frozen=True, slots=True):
     size: int | None = None
 
 
-class FileList(BaseModel, frozen=True, slots=True):
+class FileList(BaseModel):
     """List of files."""
+    model_config = _FROZEN_SLOT
+
 
     object: str | None = None
     data: list[FileInfo] = Field(default_factory=list)
