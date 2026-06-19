@@ -54,3 +54,10 @@ def validate_purpose(purpose: str) -> None:
     if purpose not in valid_purposes:
         msg = f"purpose must be one of {valid_purposes}, got {purpose}"
         raise ValueError(msg)
+
+
+def validate_limit(limit: int) -> None:
+    """Validate list-result limit."""
+    if limit < 1 or limit > 10000:
+        msg = f"limit must be between 1 and 10000, got {limit}"
+        raise ValueError(msg)
